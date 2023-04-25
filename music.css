@@ -1,0 +1,195 @@
+/*Google Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Barlow", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+}
+
+/*Variables*/
+:root {
+  --bg-color: #e2e2e2;
+  --text-color: #0e172c;
+  --btn-color: rgb(255, 43, 43);
+  --white-color: #ffffff;
+}
+
+/*custom scroll bar*/
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  background: var(--bg-color);
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--btn-color);
+  border-radius: 5rem;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+section {
+  padding: 4.5rem 0 1.5rem;
+}
+
+/*header*/
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 100px;
+  transition: 0.5s;
+  background: var(--text-color);
+}
+
+header.shadow {
+  background: var(--bg-color);
+  box-shadow: 0 0 4px rgb(14, 55, 54 / 15%);
+}
+
+header.shadow .navbar a {
+  color: var(--text-color);
+}
+
+header.shadow .logo {
+  color: var(--text-color);
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.logos {
+  width: 1.1rem;
+}
+
+.navbar {
+  display: flex;
+  column-gap: 5rem;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--bg-color);
+}
+
+.navbar a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--btn-color);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.4s all linear;
+}
+
+.navbar a:hover::after,
+.navbar .music-active::after {
+  width: 100%;
+}
+#menu-icon {
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 1000001;
+  display: none;
+}
+.btn {
+  padding: 0.7rem 1.4rem;
+  background: var(--btn-color);
+  color: #fffffe;
+  font-weight: 400;
+  border-radius: 0.5rem;
+  text-shadow: 4px 3px 10px #00000055;
+  box-shadow: 4px 3px 10px #0000003c;
+}
+
+.btn:hover {
+  background: rgb(246, 69, 69);
+}
+
+/*produtos*/
+
+.albums-container {
+    max-width: 2000px;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 30px));
+    gap: 5rem;
+    
+  }
+  .album-img{
+    width: 100%;
+    height: 100%;
+    transition: 1500ms;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 100px;
+  }
+  .album-img:hover{
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
+
+  .front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .back{
+    background: #2b37554b;
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 4px 3px 5px #0000004f;
+  }
+ 
+  .album .album-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 4px 3px 5px #0000004f;
+  }
+
+  .album h3 {
+    
+    display: flex;
+    font-size: 30px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+  }
+  
+  .album span {
+    display: flex;
+    font-size: 25px;
+  }
+  
